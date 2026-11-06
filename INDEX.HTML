@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b0a">
+  <title>SUNONA — Your Music Space</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h2 class="logo">◉ SUNONA</h2>
+    <p class="muted">YOUR MUSIC SPACE</p>
+
+    <button class="nav active" data-view="discover">⌂ Discover</button>
+    <button class="nav" data-view="library">♫ My Library</button>
+    <button class="nav" data-view="liked">♥ Liked Songs</button>
+    <button class="nav" data-view="playlists">▤ Playlists</button>
+    
+
+    <div class="side-bottom">
+      <p class="muted">YOUR MUSIC</p>
+      <label class="upload">
+        ＋ Add MP3 files
+        <input id="fileInput" type="file" accept="audio/*" multiple hidden>
+      </label>
+      <p class="tiny">Songs you add are saved in this browser.</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header>
+      <div>
+        <p class="muted">YOUR PERSONAL MUSIC PLAYER</p>
+        <h1 id="pageTitle">Discover music.</h1>
+      </div>
+      <span class="online"><i></i> SUNONA</span>
+    </header>
+
+    <form id="searchForm" class="search">
+      <span>⌕</span>
+      <input id="searchInput" placeholder="Search songs or artists..." autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+
+    <section class="hero">
+      <div>
+        <span class="eyebrow">YOUR SOUND. YOUR WORLD.</span>
+        <h2>Find your<br>next favourite.</h2>
+        <p>Discover music and build your personal library.</p>
+        <button id="exploreBtn" class="primary">Explore music ↗</button>
+      </div>
+      <div class="hero-art">♫</div>
+    </section>
+
+    <div class="section-heading">
+      <div>
+        <p class="muted">MADE FOR YOUR MOOD</p>
+        <h2 id="listTitle">Explore tracks</h2>
+      </div>
+      <span id="resultCount" class="muted"></span>
+    </div>
+
+    <p id="status" class="status">Loading music...</p>
+    <div id="trackList" class="tracks"></div>
+
+    <p class="footnote">
+      Online music is provided by Jamendo. Availability and download rights vary by track.
+    </p>
+  </main>
+
+  <footer class="player">
+    <div class="now-playing">
+      <div id="nowArt" class="mini-art">♫</div>
+      <div class="now-text">
+        <strong id="nowTitle">Choose a song</strong>
+        <span id="nowArtist">SUNONA Player</span>
+      </div>
+      <button id="likeBtn" class="icon-btn" title="Like song">♡</button>
+    </div>
+
+    <div class="controls">
+     
+<div class="buttons">
+  <button id="prevBtn" class="icon-btn" title="Previous">|◀</button>
+  <button id="playBtn" class="play-btn" title="Play">▶</button>
+  <button id="nextBtn" class="icon-btn" title="Next">▶|</button>
+  <button id="repeatBtn" class="icon-btn" title="Repeat Off" aria-label="Repeat Off">↻</button>
+</div>
+
+      <div class="timeline">
+        <span id="currentTime">0:00</span>
+        <input id="seekBar" type="range" min="0" max="100" value="0">
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+
+    <div class="volume">
+      <span>♫</span>
+      <input id="volumeBar" type="range" min="0" max="1" step="0.05" value="0.8">
+    </div>
+
+    <audio id="audio"></audio>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
